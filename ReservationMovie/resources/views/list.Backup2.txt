@@ -1,0 +1,40 @@
+<?php $title = 'List'; ?>
+@extends('layouts.navIndex')
+
+<!-- Section Real Time -->
+@section('Real-Time')
+    <?php $RealTime = ""; ?>
+@endsection
+
+@section('content')
+
+    <div class="container-fluid" style="min-width: 950px; max-width: 1200px;">
+        <!-- <br/><h5><a class="badge badge-pill badge-info">ค้นหาหนัง: </a></h5>
+            <input type="text" class="form-control typeahead mx-5" placeholder="ค้นหาหนัง" name="search" id="autocomplete" style="width: 1000px;"/><br/> -->
+    
+        <div class="row">
+            <!-- <div class="col-md-2">
+                <div style="background: #484848; padding: 15px; border: 1px solid #000; color: #FFF;" class="mt-5">หมวดหมู่</div>
+            </div> -->
+            <div class="col-md-10">
+                    <!-- demo -->
+                        <div class="mt-5 mb-3" style="background: #484848; padding: 15px; border: 1px solid #000; color: #FFF;" 
+                            width="100%">รายชื่อหนัง</div>
+                        <div id="main_content_wrap" class="outer">
+                                    <ul id="demoFive" class="demo" style="list-style-type: none;">
+                                        @foreach ($lists as $FilList)
+                                        <li class="mt-1 mx-3"><a href="{{url('/search/'.$FilList->id)}}">{{$FilList->movie_name}}</a></li>
+                                        @endforeach
+                                    </ul>
+                                    
+                                </div>
+                            <br>{{ $lists->links('vendor.pagination.bootstrap-4') }}<br>
+                        </div>
+                    <!-- demo -->
+            </div>
+
+        </div>
+
+    </div>
+
+@endsection
